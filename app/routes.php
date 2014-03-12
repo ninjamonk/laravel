@@ -15,5 +15,8 @@ Route::group(['namespace' => 'Tangfastics\Controllers'], function()
 {
 	Route::get('/', ['as' => 'users.index', 'uses' => 'UserController@getIndex']);
 
+	//Users
+	Route::get('profile/{username}', ['as' => 'profile.show', 'uses' => 'ProfileController@getProfile']);
+
 	Route::post('search', ['as' => 'search.do', 'uses' => 'SearchController@postSearch']);
 });

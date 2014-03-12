@@ -9,7 +9,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
 	 * Create a new instance of UserRepository
 	 *
 	 * @return void
-	 * @param \Tangfastics\Models\User $user 
+	 * @param \Tangfastics\Models\User $user
 	 **/
 	public function __construct(User $user)
 	{
@@ -24,5 +24,15 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
 	public function findAllPaginated($perPage=10)
 	{
 		return $this->model->orderBy('created_at', 'DESC')->paginate($perPage);
+	}
+
+	/**
+	* Find a user by username.
+	* @param string $username Username slug.
+	* @return Illuminate\Database\Eloquent\Collection|Tangfastics\Models\User[]
+	*/
+	public function findByUsername($username)
+	{
+		return $this->model->whereUsername($username)->first();
 	}
 }

@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('tangfastics.home'),
+	'local' => array('tangfastics.home', 'jasons-mac-pro.lan'),
 
 ));
 

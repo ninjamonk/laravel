@@ -44,7 +44,7 @@
 						<li><a href="#"><i class="fa fa-pencil-square-o"></i> Register</a></li>
 						@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{Auth::user()->username}} <b class="caret"></b></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{Auth::user()->username}} <b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<li><a href="#">Action</a></li>
 								<li><a href="#">Another action</a></li>
@@ -68,14 +68,14 @@
 					<div class="input-group">
 						{{Form::input('search', 'search_term', null, ['class' => 'form-control', 'placeholder' => 'Enter search term...'])}}
 						<span class="input-group-btn">
-							{{Form::submit('Search', ['class' => 'btn btn-info'])}}
+							<button type="submit" class="btn btn-info"><i class="fa fa-search"></i></button>
 						</span>
 					</div>
 				</form>
 			</div>
 		</div>
 
-		<div class="container">
+		<div class="container content-wrapper">
 			<ol class="breadcrumb">
 				<li>
 					<a href="{{URL::to('/')}}"><i class="fa fa-home"></i></a>
